@@ -3,7 +3,7 @@
 # 🏍️ MotoBid — Real-Time Motorcycle Auction Platform
 
 <p align="center">
-<b>A production-grade full-stack motorcycle auction platform featuring real-time bidding, proxy auto-bidding, AI-powered motorcycle valuation, anti-sniping auction extensions, and live operational dashboards.</b>
+  <b>A production-grade full-stack motorcycle auction platform featuring real-time bidding, proxy auto-bidding, AI-powered motorcycle valuation, anti-sniping auction extensions, and live operational dashboards.</b>
 </p>
 
 <p align="center">
@@ -17,13 +17,13 @@
 
 </p>
 
-<p align="center">
+### 🚀 Live Demo
 
-### 🚀 <a href="https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app" target="_blank">Live Demo</a>
+**https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app**
 
-### 📂 <a href="https://github.com/SahithiVIT/Bike-auction-" target="_blank">GitHub Repository</a>
+### 📂 Repository
 
-</p>
+**https://github.com/SahithiVIT/Bike-auction-**
 
 </div>
 
@@ -31,32 +31,68 @@
 
 # 📖 Overview
 
-MotoBid is a production-ready motorcycle auction platform built using React, TypeScript, Express.js and Google Gemini AI. It supports real-time auctions, AI-powered vehicle evaluation, proxy bidding, anti-sniping auction extensions and an admin operations dashboard.
+MotoBid is a modern real-time motorcycle auction platform designed to demonstrate production-ready software engineering principles.
+
+The platform supports:
+
+- ⚡ Real-time live bidding
+- 🔄 Proxy auto-bidding
+- 🤖 AI motorcycle condition analysis
+- ⏱ Anti-sniping auction extensions
+- 📊 Live admin monitoring dashboard
+- 📈 Operational telemetry
+- 🧪 Built-in testing dashboard
 
 ---
 
 # ✨ Features
 
-## ⚡ Real-Time Auctions
+## ⚡ Real-Time Live Auctions
 
-- Live Server-Sent Events (SSE)
+- Server-Sent Events (SSE)
 - Instant bid synchronization
-- Live countdown timers
-- Reserve price updates
+- Live countdown timer
+- Live reserve status updates
+
+---
 
 ## 🔄 Proxy Auto-Bidding
 
-- Automatic bidding up to a user-defined maximum
-- Competitive bid management
-- Atomic bid processing
+Users can specify a maximum bid amount.
 
-## ⏱ Anti-Sniping Protection
+The bidding engine automatically:
 
-- Automatically extends auctions by 2 minutes whenever a bid is placed during the final 2 minutes.
+- places minimum required bids
+- competes against other proxy bidders
+- stops once the maximum limit is reached
 
-## 🤖 AI Vehicle Evaluation
+---
 
-Google Gemini analyzes:
+## ⏱ Anti-Sniping Auction Protection
+
+If a bid is placed during the last **2 minutes** of an auction,
+
+the auction automatically extends by **2 additional minutes**, preventing last-second bid sniping.
+
+---
+
+## 💰 Tiered Minimum Bid Increments
+
+| Current Price | Minimum Increment |
+|---------------|------------------|
+| $1 – $499 | $25 |
+| $500 – $2,499 | $50 |
+| $2,500 – $9,999 | $100 |
+| $10,000 – $24,999 | $250 |
+| $25,000+ | $500 |
+
+---
+
+## 🤖 AI Motorcycle Evaluation
+
+Powered by **Google Gemini**
+
+The AI analyzes:
 
 - VIN
 - Mileage
@@ -64,48 +100,64 @@ Google Gemini analyzes:
 - Title Status
 - Modifications
 
-Returns:
+and generates:
 
-- Mechanical health
-- Risk score
-- Fair market value
-- Maintenance recommendations
-
-## 📊 Admin Dashboard
-
-- GMV Monitoring
-- Connected SSE Clients
-- Active Auctions
-- Bid Frequency
-- Server Logs
-- Operational Metrics
-
-## 🧪 Testing
-
-- Built-in integration tests
-- Architecture documentation
-- System design pages
+- Mechanical Condition
+- Risk Assessment
+- Estimated Market Value
+- Maintenance Recommendations
 
 ---
 
-# 🏗 Architecture
+## 📊 Admin Operations Dashboard
+
+Monitor:
+
+- Gross Merchandise Value (GMV)
+- Active Auctions
+- Connected SSE Clients
+- Bid Frequency
+- Server Latency
+- Audit Logs
+
+---
+
+## 🧪 Built-in Test Runner
+
+A dedicated testing page allows developers to run integration and unit tests directly from the UI.
+
+---
+
+## 📚 Architecture Documentation
+
+Includes:
+
+- System Architecture
+- Component Design
+- Data Flow
+- Trade-off Analysis
+- API Documentation
+
+---
+
+# 🏗 System Architecture
 
 ```
-React Frontend
-      │
-      ▼
-Server-Sent Events
-      │
-      ▼
-Express Backend
-      │
- ┌────┼─────────┐
- │    │         │
- ▼    ▼         ▼
-AI  Bid Engine Metrics
- │
- ▼
-Auction Store
+                React Frontend
+                       │
+         ──────────────┼──────────────
+                       │
+               Server-Sent Events
+                       │
+                Express Backend
+                       │
+      ┌────────────────┼────────────────┐
+      │                │                │
+ Proxy Bid Engine   Gemini AI      Metrics API
+      │                │                │
+      └────────────────┼────────────────┘
+                       │
+               In-Memory Auction Store
 ```
 
 ---
@@ -116,16 +168,20 @@ Auction Store
 |--------|------------|
 | Frontend | React 19 |
 | Language | TypeScript |
-| Backend | Express.js |
 | Styling | Tailwind CSS v4 |
-| Real-Time | Server-Sent Events |
-| AI | Google Gemini |
+| Icons | Lucide React |
+| Backend | Express.js |
+| Runtime | Node.js |
+| Real-Time | Server-Sent Events (SSE) |
+| AI | Google Gemini API |
 | Build Tool | Vite |
 | Deployment | Google Cloud Run |
 
 ---
 
 # 📡 API Endpoints
+
+## Auctions
 
 | Method | Endpoint |
 |---------|----------|
@@ -135,23 +191,45 @@ Auction Store
 | POST | /api/auctions/:id/bid |
 | POST | /api/auctions/:id/buy-now |
 | POST | /api/auctions/:id/toggle-pause |
-| GET | /api/stream |
+
+---
+
+## AI
+
+| Method | Endpoint |
+|---------|----------|
 | POST | /api/ai/condition-report |
+
+---
+
+## Streaming
+
+| Method | Endpoint |
+|---------|----------|
+| GET | /api/stream |
+
+---
+
+## Monitoring
+
+| Method | Endpoint |
+|---------|----------|
 | GET | /api/metrics |
 | GET | /api/logs |
 
 ---
 
-# 🚀 Getting Started
+# 🚀 Local Setup
 
 ## Clone Repository
 
 ```bash
 git clone https://github.com/SahithiVIT/Bike-auction-.git
+
 cd Bike-auction-
 ```
 
-## Install
+## Install Dependencies
 
 ```bash
 npm install
@@ -163,9 +241,11 @@ npm install
 npm run dev
 ```
 
-Visit:
+Application runs at
 
-**http://localhost:3000**
+```
+http://localhost:3000
+```
 
 ---
 
@@ -173,6 +253,11 @@ Visit:
 
 ```bash
 npm run build
+```
+
+Run
+
+```bash
 npm start
 ```
 
@@ -183,32 +268,37 @@ npm start
 ```
 .
 ├── README.md
-├── SUBMISSION_DOCUMENT.md
 ├── server.ts
 ├── package.json
 ├── vite.config.ts
 ├── metadata.json
+├── SUBMISSION_DOCUMENT.md
 └── src
     ├── App.tsx
     ├── components
+    │   ├── Navbar.tsx
+    │   ├── AuctionCard.tsx
+    │   ├── AuctionDetailModal.tsx
+    │   ├── CreateAuctionModal.tsx
+    │   ├── AdminOpsDashboard.tsx
+    │   ├── TestRunnerView.tsx
+    │   ├── ArchitectureDocsView.tsx
+    │   ├── WatchlistDrawer.tsx
+    │   └── NotificationBanner.tsx
     ├── data
+    │   └── mockData.ts
     └── types.ts
 ```
 
 ---
 
-# 🌐 Deployment
+# 🌐 Live Deployment
 
-### 🚀 Live Application
+**Google Cloud Run**
 
-<a href="https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app">
-Open MotoBid
-</a>
+https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app
 
 ---
 
-# 📂 Source Code
 
-<a href="https://github.com/SahithiVIT/Bike-auction-">
-View GitHub Repository
-</a
+
