@@ -13,7 +13,7 @@
   <b>A production-grade, full-stack live motorcycle auction platform built for high concurrency, real-time synchronization, anti-sniping dynamic soft-close extensions, and operational telemetry.</b>
 </p>
 
-[🌐 Live App Demo](https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app) •
+[🌐 Live App Demo](https://www.google.com/url?sa=E&q=https%3A%2F%2Fais-dev-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app) •
 [📂 GitHub Repository](https://github.com/SahithiVIT/Bike-auction-) •
 [📄 Submission Specification Document](./SUBMISSION_DOCUMENT.md)
 
