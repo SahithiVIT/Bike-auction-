@@ -1,0 +1,6 @@
+{
+  "name": "MotoBid - Production Bike Auction Platform",
+  "description": "Production-grade live motorcycle auction platform featuring real-time bidding, proxy auto-bids, anti-sniping timers, admin ops dashboard, system observability, and engineering architecture docs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
