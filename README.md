@@ -19,7 +19,7 @@
 
 ### 🚀 Live Demo
 
-**https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app**
+**https://ais-dev-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app/**
 
 ### 📂 Repository
 
