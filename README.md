@@ -1,66 +1,79 @@
-# MotoBid — Production Bike Auction Platform
+<div align="center">
 
-> A production-grade real-time motorcycle auction platform built with **React 19**, **Express**, **TypeScript**, **Tailwind CSS v4**, **Server-Sent Events (SSE)**, and **Google Gemini AI**. Designed for high concurrency, real-time state synchronization, anti-sniping soft close timer extensions, and operational observability.
+# 🏍️ MotoBid — Real-Time Motorcycle Auction Platform
 
----
+[![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Express](https://img.shields.io/badge/Express-4.21-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.0-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Google Gemini API](https://img.shields.io/badge/Google_Gemini-AI_Valuations-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![Deployment Status](https://img.shields.io/badge/Deployment-Active_Cloud_Run-22c55e?style=for-the-badge&logo=googlecloud&logoColor=white)](https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app)
 
-## 🌐 Live Deployed Application
+<p align="center">
+  <b>A production-grade, full-stack live motorcycle auction platform built for high concurrency, real-time synchronization, anti-sniping dynamic soft-close extensions, and operational telemetry.</b>
+</p>
 
-- **Live Production App URL:** [https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app](https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app)
-- **Assignment Submission Document:** Refer to [`SUBMISSION_DOCUMENT.md`](./SUBMISSION_DOCUMENT.md) in this repository for full engineering specs.
+[🌐 Live App Demo](https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app) •
+[📂 GitHub Repository](https://github.com/SahithiVIT/Bike-auction-) •
+[📄 Submission Specification Document](./SUBMISSION_DOCUMENT.md)
 
----
-
-## ✨ Key Features & Capabilities
-
-### 1. Real-Time Bidding Engine
-- **Server-Sent Events (SSE)**: Instant bi-directional broadcast of new high bids, reserve status updates, soft-close extensions, and buy-now events across all active client browsers.
-- **Proxy Auto-Bidding**: Set maximum bid ceilings (`maxProxyAmount`) where the server automatically places incremental counter-bids on your behalf up to your limit.
-- **Dynamic Tiered Minimum Increments**: Automatically calculated based on current price tiers ($25 for <$500, $50 for <$2,500, $100 for <$10,000, $250 for <$25,000, $500 for $25,000+).
-- **Anti-Sniping Soft Close**: Automatically extends auction `endTime` by +2 minutes if a bid is placed within the final 120 seconds, ensuring fair price discovery.
-
-### 2. Comprehensive Motorcycle Specs & AI Mechanical Valuations
-- Detailed motorcycle specs including **VIN Verification**, make, model, odometer mileage, title status, service logs, and custom modifications.
-- **Gemini AI Risk Assessment**: Server-side proxy integration calling Google Gemini (`@google/genai`) to generate mechanical health analysis, fair market valuation ranges, and buyer risk ratings.
-
-### 3. Operational Observability & Admin Ops
-- **Real-Time Telemetry**: Live metric trackers for Gross Merchandise Value (GMV), active SSE client connections, bid throughput, and server health.
-- **Structured System Logs**: Live streaming audit logs tracking bid transactions, mutex acquisitions, soft-close triggers, and error events.
-- **Admin Management**: Capability to pause/resume auctions, adjust parameters, and trigger automated simulation test bots.
-
-### 4. Interactive Test Runner & Architecture Documentation
-- **In-Browser Integration Test Runner**: Execute automated unit & integration test suites directly from the UI tab (`/tests`).
-- **Architecture & System Design View**: In-depth interactive system topology charts, data schemas, and trade-off documentation (`/docs`).
+</div>
 
 ---
 
-## 🛠️ Tech Stack
+## 📋 Table of Contents
 
-- **Frontend**: React 19, TypeScript, Tailwind CSS v4, Lucide React Icons
-- **Backend**: Node.js, Express.js
-- **Real-time Protocol**: Server-Sent Events (SSE)
-- **AI Integration**: `@google/genai` (Google Gemini API)
-- **Build Tooling**: Vite, esbuild
+- [Overview](#-overview)
+- [Key Features & System Architecture](#-key-features--system-architecture)
+- [System Architecture & Data Flow](#-system-architecture--data-flow)
+- [API Endpoints Specification](#-api-endpoints-specification)
+- [Tech Stack](#-tech-stack)
+- [Local Development & Setup](#-local-development--setup)
+- [Project Directory Structure](#-project-directory-structure)
+- [Submission Deliverables Checklist](#-submission-deliverables-checklist)
 
 ---
 
-## 🚀 Local Development & Execution Setup
+## 🌟 Overview
 
-### Prerequisites
-- **Node.js** v18+ or v20+
-- **npm** or **yarn**
+**MotoBid** is engineered as a software engineering internship assignment solution demonstrating production-ready application design, real-time bid state synchronization, anti-sniping protection, automated mechanical risk assessment using Google Gemini AI, and live telemetry observability.
 
-### Quickstart Commands
+### 🔗 Production Links
 
-```bash
-# 1. Install dependencies
-npm install
+| Resource | URL | Description |
+| :--- | :--- | :--- |
+| 🚀 **Live Production App** | [`ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app`](https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app) | Production environment deployed on Cloud Run |
+| 🐙 **GitHub Repository** | [`github.com/SahithiVIT/Bike-auction-`](https://github.com/SahithiVIT/Bike-auction-) | Primary source code repository |
+| 📄 **Submission Package** | [`SUBMISSION_DOCUMENT.md`](./SUBMISSION_DOCUMENT.md) | Technical specs, trade-off matrix, and architecture documentation |
 
-# 2. Run local development server (Express + Vite on Port 3000)
-npm run dev
+---
 
-# 3. Build for production Cloud Run deployment
-npm run build
+## ✨ Key Features & System Architecture
 
-# 4. Start production Node server
-npm start
+### 1. ⚡ Real-Time Bidding & Concurrency Controls
+- **Server-Sent Events (SSE)**: Pushes instantaneous live bid updates, reserve status changes, and time extension notifications across all connected client browser sessions without polling overhead.
+- **Proxy Auto-Bidding Engine**: Allows users to set maximum proxy bid limits. The engine automatically bids incrementally on their behalf to maintain leading status up to their ceiling.
+- **Dynamic Tiered Minimum Increments**:
+  - `$1` – `$499`: `$25` minimum increment
+  - `$500` – `$2,499`: `$50` minimum increment
+  - `$2,500` – `$9,999`: `$100` minimum increment
+  - `$10,000` – `$24,999`: `$250` minimum increment
+  - `$25,000+`: `$500` minimum increment
+- **Anti-Sniping Soft-Close Extension**: If a bid is submitted within 2 minutes ($120,000\text{ ms}$) of an auction closing, the duration is dynamically extended by $+2\text{ minutes}$ to give bidders fair counter-opportunities and prevent last-second bot sniping.
+
+### 2. 🤖 AI-Powered Mechanical Condition & Valuation Proxy
+- Integrated with Google Gemini (`@google/genai`) on the Express backend server.
+- Analyzes VIN number, mileage, service records, title status, and custom modifications to produce instant mechanical health evaluations, risk ratings, and fair market price ranges.
+
+### 3. 📊 Admin Ops Dashboard & Telemetry Stream
+- **System Metrics**: Real-time tracking of Gross Merchandise Value (GMV), bid placement frequency, connected SSE streams, and system latency.
+- **Audit Logs**: Filterable live server transaction stream logging mutex acquisitions, outbid notifications, and status transitions.
+- **Simulation Control**: Admin controls to simulate high-frequency bot bidding traffic and test system resilience under load.
+
+### 4. 🧪 Automated Integration Test Suite & Architecture Docs
+- **Interactive Test Runner**: Execute automated unit and integration tests directly inside the UI application under the `/tests` tab.
+- **System Design View**: Interactive architecture specs, ER diagram specifications, and trade-off justification tables under the `/docs` tab.
+
+---
+
+## 📐 System Architecture & Data Flow
