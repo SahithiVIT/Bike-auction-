@@ -290,15 +290,7 @@ npm start
     └── types.ts
 ```
 
----
 
-# 🌐 Live Deployment
-
-**Google Cloud Run**
-
-https://ais-pre-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app
-
----
 
 
 
