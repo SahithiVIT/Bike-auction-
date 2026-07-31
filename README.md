@@ -1,24 +1,28 @@
 # 🏍️ MotoBid – Real-Time Motorcycle Auction Platform
 
-MotoBid is a full-stack web application that enables users to participate in live motorcycle auctions in real time. The platform provides secure authentication, instant bidding updates, auction management, and a modern responsive user interface.
+# 🏍️ MotoBid – Real-Time Motorcycle Auction Platform
+
+MotoBid is a full-stack web application that enables users to participate in real-time motorcycle auctions. The platform allows users to browse premium motorcycles, place live bids, and monitor auction activity through a responsive and interactive interface.
 
 ## 🚀 Live Demo
 
-🔗 **Application:**  
+**Application:**  
 https://ais-dev-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app
 
 ---
 
 ## ✨ Features
 
-- 🔐 User Authentication
-- 🏍️ Motorcycle Listings
-- ⏱️ Live Auction System
-- 💰 Real-Time Bidding
-- 📈 Highest Bid Tracking
-- 👤 User Dashboard
-- 📱 Responsive Design
-- ⚡ Fast and Interactive UI
+- 🏍️ Browse premium motorcycle listings
+- ⏱️ Real-time motorcycle auctions
+- 💰 Live bidding system
+- 🤖 Proxy auto-bidding
+- 🛡️ Verified VIN inspection specifications
+- ⏳ Anti-sniping soft-close timer
+- 🔍 Search motorcycles by Make, Model, Year, VIN, or Location
+- 📊 Live auction statistics
+- 📱 Responsive design
+- ⚡ Fast and interactive user interface
 
 ---
 
@@ -27,8 +31,8 @@ https://ais-dev-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app
 ### Frontend
 - React
 - TypeScript
-- Tailwind CSS
 - Vite
+- Tailwind CSS
 
 ### Backend
 - Node.js
@@ -40,17 +44,23 @@ https://ais-dev-jfnhc4n7iyjwvasdv2c77m-452563035756.asia-southeast1.run.app
 ### Deployment
 - Google Cloud Run
 
+### Version Control
+- Git
+- GitHub
+
 ---
 
 ## 📂 Project Structure
 
 ```
 MotoBid/
-├── client/
-├── server/
-├── shared/
+├── src/
 ├── assets/
+├── index.html
+├── server.ts
 ├── package.json
+├── tsconfig.json
+├── vite.config.ts
 └── README.md
 ```
 
@@ -58,25 +68,25 @@ MotoBid/
 
 ## ⚙️ Installation
 
-Clone the repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/MotoBid.git
+git clone https://github.com/your-username/MotoBid.git
 ```
 
-Navigate to the project
+Navigate to the project:
 
 ```bash
 cd MotoBid
 ```
 
-Install dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Start the development server
+Run the development server:
 
 ```bash
 npm run dev
@@ -84,24 +94,15 @@ npm run dev
 
 ---
 
-## 📸 Screenshots
+## 🚀 Future Enhancements
 
-Add screenshots of:
-- Home Page
-- Motorcycle Listings
-- Auction Room
-- Dashboard
-- Live Bidding
-
----
-
-## 🎯 Future Improvements
-
+- User Authentication
+- Online Payment Integration
 - Email Notifications
-- Payment Integration
+- Watchlist & Favorites
 - Auction History
-- Admin Analytics
-- Image Upload Support
-- Push Notifications
+- Admin Analytics Dashboard
 
--
+
+
+ 
