@@ -1,7 +1,5 @@
 # 🏍️ MotoBid – Real-Time Motorcycle Auction Platform
 
-# 🏍️ MotoBid – Real-Time Motorcycle Auction Platform
-
 MotoBid is a full-stack web application that enables users to participate in real-time motorcycle auctions. The platform allows users to browse premium motorcycles, place live bids, and monitor auction activity through a responsive and interactive interface.
 
 ## 🚀 Live Demo
